@@ -6,7 +6,7 @@ import model.user.User;
 
 import static io.restassured.http.ContentType.JSON;
 
-@ServiceDomain("85.192.34.140:8080/api")
+@ServiceDomain("http://85.192.34.140:8080/api")
 public class UserController {
     @POST("/register")
     @ContentType(JSON)
@@ -24,7 +24,7 @@ public class UserController {
     @ContentType(JSON)
     private RestMethod deleteUser;
 
-    private JDIAssertedResponse registerNewUser(User user) {
+    public JDIAssertedResponse registerNewUser(User user) {
         return new JDIAssertedResponse(registerUser.body(user).call());
     }
 }

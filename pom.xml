@@ -19,11 +19,13 @@
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.epam.jdi/jdi-dark -->
         <dependency>
             <groupId>com.epam.jdi</groupId>
-            <artifactId>jdi-dark-bdd</artifactId>
+            <artifactId>jdi-dark</artifactId>
             <version>1.1.13</version>
         </dependency>
+
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
@@ -44,6 +46,13 @@
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+
 
 
     </dependencies>
