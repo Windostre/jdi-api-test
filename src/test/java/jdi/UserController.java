@@ -2,6 +2,7 @@ package jdi;
 
 import com.epam.http.annotations.*;
 import com.epam.http.requests.RestMethod;
+import model.user.User;
 
 import static io.restassured.http.ContentType.JSON;
 
@@ -22,4 +23,8 @@ public class UserController {
     @DELETE
     @ContentType(JSON)
     private RestMethod deleteUser;
+
+    private JDIAssertedResponse registerNewUser(User user) {
+        return new JDIAssertedResponse(registerUser.body(user).call());
+    }
 }
