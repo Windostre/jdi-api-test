@@ -11,19 +11,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 @ServiceDomain("http://85.192.34.140:8080/api")
-public class AuthenticationController {
+public class AuthController {
 
-    private static String jwt;
+    private String jwt;
 
     @POST("/login")
     @ContentType(io.restassured.http.ContentType.JSON)
     private static RestMethod auth;
 
-    protected static Header getAuthHeader() {
+    public Header getAuthHeader() {
         return new Header("Authorization", "Bearer " + jwt);
     }
 
-    public static String login(User user) {
+    public String login(User user) {
         Map<String, String> credentials = new HashMap<String, String>() {{
                 put("username", user.getLogin());
                 put("password", user.getPass());
