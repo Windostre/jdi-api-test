@@ -32,6 +32,7 @@ public class UserController extends AuthController {
                         .setBody(changeUserPass))
         );
     }
+
     public JDIAssertedResponse registerNewUser(User user) {
         return new JDIAssertedResponse(registerUser.body(user).call());
     }

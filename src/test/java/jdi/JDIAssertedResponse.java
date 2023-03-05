@@ -26,7 +26,7 @@ public class JDIAssertedResponse {
 
     public JDIAssertedResponse hasStatusCode(int expectedStatus) {
         int actualStatus = response.getStatus().code;
-        assertEquals(expectedStatus,actualStatus);
+        assertEquals(expectedStatus, actualStatus);
         return this;
 
     }

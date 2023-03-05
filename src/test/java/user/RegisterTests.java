@@ -1,19 +1,16 @@
 package user;
 
-import com.jdiai.tools.map.MapArray;
 import helper.Utils;
 import jdi.AuthController;
 import jdi.UserController;
 import model.user.ChangeUserPass;
 import model.user.User;
-import org.hamcrest.Matcher;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static com.epam.http.requests.ServiceInit.init;
-import static org.hamcrest.CoreMatchers.*;
 
 public class RegisterTests {
 
