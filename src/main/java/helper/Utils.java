@@ -14,4 +14,8 @@ public class Utils {
         String password = faker.internet().password(3, 6);
         return new User(login, password);
     }
+    public String generatePassword() {
+        String password = faker.internet().password(3, 6);
+        return password;
+    }
 }
