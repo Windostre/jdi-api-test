@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import model.game.Game;
 
 import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

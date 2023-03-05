@@ -1,6 +1,5 @@
 package user;
 
-import com.epam.http.requests.SoapMethod;
 import helper.Utils;
 import jdi.UserController;
 import model.user.User;
@@ -21,19 +20,20 @@ public class RegisterTests {
     public static void initService() {
         userController = init(UserController.class);
     }
+
     @Before
     public void initTestData() {
         user = utils.generateRandomUser();
     }
 
     @Test
-    public void registerUserSuccessReturnStatus200ok() {
+    public void registerUserSuccessReturnStatus201ok() {
         User actualUser = userController.registerNewUser(user)
                 .hasStatusCode(201)
                 .hasMessage("User created")
                 .as("register_data", User.class);
 
         Assert.assertTrue(String.valueOf(actualUser.getId()).matches("\\d+"));
-        
+
     }
 }

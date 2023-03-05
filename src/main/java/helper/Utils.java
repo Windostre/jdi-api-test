@@ -8,9 +8,10 @@ import model.user.User;
  */
 public class Utils {
     private final Faker faker = new Faker();
+
     public User generateRandomUser() {
         String login = faker.internet().emailAddress();
-        String password = faker.internet().password(3,6);
+        String password = faker.internet().password(3, 6);
         return new User(login, password);
     }
 }

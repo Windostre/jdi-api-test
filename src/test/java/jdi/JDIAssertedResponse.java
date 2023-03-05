@@ -2,9 +2,8 @@ package jdi;
 
 import com.epam.http.response.RestResponse;
 import model.user.Message;
-import org.junit.Assert;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class JDIAssertedResponse {
     public final RestResponse response;
