@@ -7,7 +7,7 @@ import model.user.User;
 import static io.restassured.http.ContentType.JSON;
 
 @ServiceDomain("http://85.192.34.140:8080/api")
-public class UserController {
+public class UserController extends AuthenticationController {
     @POST("/register")
     @ContentType(JSON)
     private RestMethod registerUser;
