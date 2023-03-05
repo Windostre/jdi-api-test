@@ -52,11 +52,12 @@ public class RegisterTests {
                 .hasStatusCode(200) //TODO разобраться, почему 404
                 .hasMessage("User password successfully changed");
 
-        MapArray<String, Matcher<?>> bodyAsserts = new MapArray<>();
-        bodyAsserts.add("pass", not(equalTo(randomUser.getPass())));
-
-        userController.getUserInfo().response.assertBody(bodyAsserts);
-        //userController.deleteAuthUser();
+        User user = userController.getUserInfo().response.asData(User.class);
+//        MapArray<String, Matcher<?>> bodyAsserts = new MapArray<>();
+//        bodyAsserts.add("pass", not(equalTo(randomUser.getPass())));
+//
+//        userController.getUserInfo().response.assertBody(bodyAsserts);
+        Assert.assertNotEquals(user.getPass(), randomUser.getPass());
 
     }
 }
