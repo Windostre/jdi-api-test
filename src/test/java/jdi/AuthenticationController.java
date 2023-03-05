@@ -4,6 +4,7 @@ import com.epam.http.annotations.ContentType;
 import com.epam.http.annotations.POST;
 import com.epam.http.annotations.ServiceDomain;
 import com.epam.http.requests.RestMethod;
+import io.restassured.http.Header;
 import model.user.User;
 
 import java.util.HashMap;
@@ -17,6 +18,10 @@ public class AuthenticationController {
     @POST("/login")
     @ContentType(io.restassured.http.ContentType.JSON)
     private static RestMethod auth;
+
+    protected static Header getAuthHeader() {
+        return new Header("Authorization", "Bearer " + jwt);
+    }
 
     public static String login(User user) {
         Map<String, String> credentials = new HashMap<String, String>() {{
