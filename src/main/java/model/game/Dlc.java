@@ -13,5 +13,5 @@ public class Dlc {
     private boolean isDlcFree;
     private int price;
     private int rating;
-    public SimilarDlc similarDlc;
+    private SimilarDlc similarDlc;
 }
