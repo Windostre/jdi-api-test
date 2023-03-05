@@ -19,14 +19,14 @@ public class JDIAssertedResponse {
 
     //получаем сообщение и статус из json блока info
     public JDIAssertedResponse hasMessage(String expectedMessage) {
-        Message message = as("info", Message.class);
-        assertEquals(message.getMessage(), expectedMessage);
+        Message actualMessage = as("info", Message.class);
+        assertEquals(expectedMessage, actualMessage.getMessage());
         return this;
     }
 
     public JDIAssertedResponse hasStatusCode(int expectedStatus) {
         int actualStatus = response.getStatus().code;
-        assertEquals(actualStatus, expectedStatus);
+        assertEquals(expectedStatus,actualStatus);
         return this;
 
     }
