@@ -9,7 +9,7 @@ import static com.epam.http.requests.RequestDataFactory.headers;
 import static io.restassured.http.ContentType.JSON;
 
 @ServiceDomain("http://85.192.34.140:8080/api")
-public class UserController extends AuthenticationController {
+public class UserController extends AuthController {
     @POST("/register")
     @ContentType(JSON)
     private RestMethod registerUser;
@@ -34,5 +34,16 @@ public class UserController extends AuthenticationController {
     }
     public JDIAssertedResponse registerNewUser(User user) {
         return new JDIAssertedResponse(registerUser.body(user).call());
+    }
+
+    public UserController auth(User user) {
+        login(user);
+        return this;
+    }
+
+    public JDIAssertedResponse getUserInfo() {
+        return new JDIAssertedResponse(getUserInfo.call(
+                headers().add(getAuthHeader()))
+        );
     }
 }
